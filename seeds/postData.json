@@ -1,0 +1,27 @@
+[
+    {
+        "title": "10 Steps for Easy CSS",
+        "text": "CSS can be hard, that's why you should use something like a CSS framework. That way, you can style your webpages EZ! And then, steps 2 - 10 are just refer back to step 1!",
+        "user_id": 1
+    },
+    {
+        "title": "NFTs for Beginners",
+        "text": "Alright, so, breaking it down for you; NFTs, right, you want to make sure that they ARE NOT fungible. That's the big one right there, as soon as that token is fungible, it's no longer something I would call an NFT.",
+        "user_id": 2
+    },
+    {
+        "title": "On Different CSS Frameworks",
+        "text": "So anyway, CSS frameworks are great, and there's a lot of 'em. You've got your Bootstraps, your Bulmas, your UIkits... The list really does go on and on. It can be daunting to pick just one. But once you do, just run with it I guess. You'll learn a lot and your webpages will be that much more stylish.",
+        "user_id": 1
+    },
+    {
+        "title": "Gib monee pl0x",
+        "text": "Hewwo I'm in need of moolah OwO I'm not have so much after BAD ACCIDENT uguuu... Couwd yuo pwease spawe some change fow a poow boy UwU",
+        "user_id": 3
+    },
+    {
+        "title": "Graphics Card Availability",
+        "text": "So what with all the silicone being tough to source, there aren't many graphics cards init. I've been wanting to upgrade my horribly outdated RTX 2080 TI with an RTX 3090 for a few months now, but I haven't seen one at any online retailer in ages. Any recommendations?",
+        "user_id": 4
+    }
+]
