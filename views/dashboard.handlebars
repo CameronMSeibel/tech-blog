@@ -1,0 +1,8 @@
+{{#each posts as |post|}}
+{{> blog-post}}
+<a href="/dashboard/edit/{{post.id}}">Edit</a>
+<a href="/dashboard" id="delete" data-id="{{post.id}}">Delete</a>
+{{/each}}
+
+<a href="/dashboard/create" class="btn btn-primary text-center d-block mt-5">New Post</a>
+<script src="/js/post.js"></script>
