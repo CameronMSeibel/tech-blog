@@ -6,15 +6,15 @@ async function login(event){
     }
     body = JSON.stringify(body)
     try{
-        const response = await fetch("/api/user/login", {method: "POST", body, headers: {"Content-Type": "application/json"}});
+        const response = await fetch("/api/user/", {method: "POST", body, headers: {"Content-Type": "application/json"}});
         if(response.ok){
             document.location.replace("/");
         }else{
-            alert("Login attempt failed.")
+            alert("Sign up failed.")
         }
     }catch(error){
         alert(`Error: ${error}`);
     }
 }
 
-document.getElementById("login").addEventListener("submit", login);
+document.getElementById("signup").addEventListener("submit", login);
