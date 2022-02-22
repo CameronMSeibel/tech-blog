@@ -34,4 +34,22 @@ router.get("/signup", async (req, res) => {
     res.render("signup");
 })
 
+/**
+ * Render a single view of a blog post when given an ID corresponding to a blog post.
+ */
+ router.get("/:id", async (req, res) => {
+    let post = await Post.findByPk(req.params.id, {
+        attributes: ["id", "title", "text", [sequelize.fn("DATE_FORMAT", sequelize.col("post.posted"), "%m/%d/%Y"), "posted"]],
+        include: [
+            {model: User, attributes: ["name"]},
+            {model: Comment, attributes: ["text", [sequelize.fn("DATE_FORMAT", sequelize.col("comments.posted"), "%m/%d/%Y"), "posted"]], include: [{model: User, attributes: ["name"]}]}
+        ]
+    });
+    if(!post){
+        return res.status(404).redirect("/");
+    }
+    post = post.toJSON();
+    res.render("blog-single", {logged_in: req.session.logged_in, post})
+});
+
 module.exports = router;
