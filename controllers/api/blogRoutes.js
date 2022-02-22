@@ -70,6 +70,9 @@ router.post("/comment", async (req, res) => {
     }
 });
 
+/**
+ * Updates a post given the post belongs to the logged in user. Body should be JSON with keys "title" and "text".
+ */
 router.put("/:id", async (req, res) => {
     try{
         const result = await Post.update({

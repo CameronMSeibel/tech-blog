@@ -12,5 +12,19 @@
     {{#each post.comments as |comment|}}
     {{>blog-comment}}
     {{/each}}
-    <button class="btn btn-primary text-center mt-1">Leave a comment</button>
+    <button class="btn btn-primary text-center mt-1 mx-auto d-block" id="comment-button">Leave a comment</button>
+    <div class="card invisible" id="comment-form">
+        <div class="card-header">
+            <h6 class="card-title">Leave a comment</h6>
+        </div>
+        <div class="card-body">
+            <form id="new-comment">
+                <div class="form-group">
+                    <textarea type="text" class="form-control" id="text" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mt-1 d-block mx-auto">Comment</button>
+            </form>
+        </div>
+    </div>
 </div>
+<script src="/js/comment.js"></script>
