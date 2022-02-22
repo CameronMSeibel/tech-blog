@@ -45,5 +45,13 @@ async function remove(){
 }
 
 document.querySelectorAll(".delete").forEach((link) => link.addEventListener("click", remove));
-document.getElementById("edit-post").addEventListener("submit", edit);
-document.getElementById("new-post").addEventListener("submit", post);
+try{
+    document.getElementById("edit-post").addEventListener("submit", edit);
+}catch(error){
+    console.error(error);
+}
+try{
+    document.getElementById("new-post").addEventListener("submit", post);
+}catch(error){
+    console.error(error);
+}

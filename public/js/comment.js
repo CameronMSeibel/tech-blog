@@ -18,8 +18,8 @@ async function post(event){
 }
 
 document.getElementById("comment-button").addEventListener("click", (event) => {
-    document.getElementById("comment-form").classList.remove("invisible");
-    event.target.classList.add("invisible");
+    document.getElementById("comment-form").classList.remove("d-none");
+    event.target.classList.add("d-none");
 });
 
 document.getElementById("new-comment").addEventListener("submit", post);

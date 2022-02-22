@@ -3,7 +3,7 @@ module.exports = {
         if(req.session.logged_in){
             next();
         }else{
-            res.redirect("/");
+            res.redirect("/login");
         }
 
     }
