@@ -70,4 +70,21 @@ router.post("/comment", async (req, res) => {
     }
 });
 
+router.delete("/:id", async (req, res) => {
+    try{
+        const result = await Post.destroy({
+            where: {
+                user_id: req.session.user_id,
+                id: req.params.id
+            }
+        })
+        if(!result){
+            return res.status(404).json({error: "No posts deleted."});
+        }
+        res.status(204).json({message: "Post deleted."})
+    }catch(error){
+        res.status(500).json({error});
+    }
+})
+
 module.exports = router;
