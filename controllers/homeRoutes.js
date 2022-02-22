@@ -8,7 +8,6 @@ router.get("/", async (req, res) => {
         include: [{model: User, attributes: ["name"]}]
     });
     const posts = postData.map((post) => post.toJSON());
-    console.log(posts);
     res.render("blog", {logged_in: req.session.logged_in, posts});
 });
 
