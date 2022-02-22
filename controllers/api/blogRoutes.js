@@ -70,6 +70,30 @@ router.post("/comment", async (req, res) => {
     }
 });
 
+router.put("/:id", async (req, res) => {
+    try{
+        const result = await Post.update({
+            title: req.body.title,
+            text: req.body.text,
+        },
+        {
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id
+            }
+        });
+        if(!result){
+            return res.status(404).json({error: "Failed to update."});
+        }
+        res.status(200).json(result);
+    }catch(error){
+        res.status(500).json({error});
+    }
+});
+
+/**
+ * Deletes a post with the given ID, if it's the user's post and they are logged in.
+ */
 router.delete("/:id", async (req, res) => {
     try{
         const result = await Post.destroy({

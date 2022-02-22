@@ -1,3 +1,22 @@
+async function edit(event){
+    event.preventDefault();
+    let body = {
+        title: document.getElementById("title").value.trim(),
+        text: document.getElementById("text").value.trim()
+    }
+    body = JSON.stringify(body);
+    const response = await fetch(`/api/blog/${document.location.pathname.split("/").pop()}`, {
+        method: "PUT",
+        body,
+        headers: {"Content-Type": "application/json"}
+    });
+    if(response.ok){
+        document.location.replace("/dashboard");
+    }else{
+        alert("Failed to update.");
+    }
+}
+
 async function post(event){
     event.preventDefault();
     let body = {
@@ -15,7 +34,6 @@ async function post(event){
     }else{
         alert("Failed to post.");
     }
-
 }
 
 async function remove(){
@@ -26,6 +44,6 @@ async function remove(){
     document.location.reload();
 }
 
-const links = document.querySelectorAll(".delete");
-links.forEach((link) => link.addEventListener("click", remove));
+document.querySelectorAll(".delete").forEach((link) => link.addEventListener("click", remove));
+document.getElementById("edit-post").addEventListener("submit", edit);
 document.getElementById("new-post").addEventListener("submit", post);
