@@ -18,4 +18,8 @@ router.get("/", withAuth, async (req, res) => {
     res.render("dashboard", {logged_in: true, posts});
 });
 
+router.get("/create", withAuth, async (req, res) => {
+    res.render("create", {logged_in: true});
+});
+
 module.exports = router;

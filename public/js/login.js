@@ -8,7 +8,7 @@ async function login(event){
     try{
         const response = await fetch("/api/user/login", {method: "POST", body, headers: {"Content-Type": "application/json"}});
         if(response.ok){
-            document.location.replace("/");
+            document.location.replace("/dashboard");
         }else{
             alert("Login attempt failed.")
         }
